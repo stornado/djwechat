@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# static root files
+djwechat/djwechat/static/
+
+# sqlite db file
+djwechat/db.sqlite3
