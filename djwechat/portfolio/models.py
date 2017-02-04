@@ -16,7 +16,8 @@ class Banner(models.Model):
     title = models.CharField(verbose_name=_('Title'),
                              max_length=15)
     link = models.URLField(verbose_name=_('Link'))
-    image = models.URLField(verbose_name=_('ImageURL'))
+    image = models.URLField(verbose_name=_('ImageURL'),
+                            null=True, blank=True)
     description = models.TextField(verbose_name=_('Description'),
                                    null=True, blank=True)
     uuid = models.UUIDField(verbose_name=_('UUID'), default=uuid4)
@@ -53,6 +54,18 @@ class User(models.Model):
     nickname = models.CharField(verbose_name=_('Nick Name'),
                                 max_length=25,
                                 null=True, blank=True)
+    country = models.CharField(verbose_name=_('Country'),
+                               max_length=15,
+                               null=True, blank=True)
+    province = models.CharField(verbose_name=_('Province'),
+                                max_length=15,
+                                null=True, blank=True)
+    city = models.CharField(verbose_name=_('City'),
+                            max_length=15,
+                            null=True, blank=True)
+    address = models.CharField(verbose_name=_('Address'),
+                               max_length=50,
+                               null=True, blank=True)
     description = models.TextField(verbose_name=_('Description'),
                                    null=True, blank=True)  # 备注
 

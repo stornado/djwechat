@@ -1,0 +1,14 @@
+{% load i18n %}
+<section class="row">
+    <div class="col-md-6">
+        <canvas id="myRadarChart"></canvas>
+    </div>
+    <div class="col-md-6">
+        {% for skill in skills %}
+            <div class="skill">
+                <h2>{{ skill.name }}</h2>
+                <p>{{ skill.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>

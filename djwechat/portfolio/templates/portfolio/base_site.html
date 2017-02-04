@@ -1,1 +1,4 @@
 {% extends "portfolio/base.html" %}{% load i18n static %}
+{% block title %}
+    {{ title|default:_('Portfolio') }}
+{% endblock title %}
