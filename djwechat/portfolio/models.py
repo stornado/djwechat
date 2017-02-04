@@ -14,23 +14,17 @@ from uuid import uuid4
 class Banner(models.Model):
     ''' Banner '''
     title = models.CharField(verbose_name=_('Title'),
-                             max_length=15)
-    link = models.URLField(verbose_name=_('Link'))
+                             max_length=15,
+                             null=True, blank=True)
+    link = models.URLField(verbose_name=_('Link'),
+                           null=True, blank=True)
     image = models.URLField(verbose_name=_('ImageURL'),
                             null=True, blank=True)
     description = models.TextField(verbose_name=_('Description'),
                                    null=True, blank=True)
-    uuid = models.UUIDField(verbose_name=_('UUID'), default=uuid4)
     order = models.SmallIntegerField(verbose_name=_('Order'),
                                      default=0,
                                      help_text=_('The order of the banner'))
-
-    title_size = models.FloatField(verbose_name=_('Title Size'),
-                                   default=1.5,
-                                   help_text=_('Title size use rem'))
-    title_color = models.CharField(verbose_name=_('Title Color'),
-                                   default='#ffffff',
-                                   max_length=15)
 
     def __str__(self):
         return self.title
@@ -84,7 +78,8 @@ class SNS(models.Model):
     user = models.ForeignKey(verbose_name=_('User'), to=User)
     name = models.CharField(verbose_name=_('Name'), max_length=15)  # 名字
     sns_id = models.CharField(verbose_name=_('ID'), max_length=15)  # 三方登录方式ID
-    avatar = models.URLField(verbose_name=_('AvatarURL'))  # 头像
+    avatar = models.URLField(verbose_name=_('AvatarURL'),
+                             null=True, blank=True)  # 头像
     link = models.URLField(verbose_name=_('Link'),  # 三方登录方式主页链接
                            help_text=_("The homepage of the platform"),
                            null=True, blank=True)
@@ -130,9 +125,11 @@ class Experience(models.Model):
     end = models.DateField(verbose_name=_('End'))  # 结束时间
     title = models.CharField(verbose_name=_('Title'), max_length=15)  # 标题
     description = models.TextField(verbose_name=_('Description'))  # 具体内容
+    image = models.URLField(verbose_name=_('ImageURL'),
+                            null=True, blank=True)
 
     def __str__(self):
-        return title
+        return self.title
 
     class Meta:
         db_table = 'portfolio_milestone'

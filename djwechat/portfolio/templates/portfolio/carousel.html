@@ -7,17 +7,17 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         {% for banner in banners %}
-        <div class="item{% if forloop.counter0 == 0 %} active{% endif %}">
-            <a href="{{ banner.link }}">
+        <a href="{{ banner.link|default:'#' }}">
+            <div class="item{% if forloop.counter0 == 0 %} active{% endif %}">
                 <img src="{{ banner.image|default:'data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}" alt="{{ banner.title }}">
-            </a>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>{{ banner.title }}</h1>
-                    <p>{{ banner.description }}</p>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>{{ banner.title }}</h1>
+                        <p>{{ banner.description }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

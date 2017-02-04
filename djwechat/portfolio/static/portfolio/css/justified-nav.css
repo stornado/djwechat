@@ -1,6 +1,7 @@
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
 
 .nav-tabs.row > li > a {
+    text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
 }

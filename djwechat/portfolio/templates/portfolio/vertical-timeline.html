@@ -1,12 +1,13 @@
-{% load i18n %}<section id="cd-timeline" class="cd-container">{% for section in sections %}
+{% load i18n %}
+<section id="cd-timeline" class="cd-container">{% for section in experience %}
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
-            <img src="{{ section.img_url }}" alt="{{ section.img_tile }}">
+            <img src="{{ section.image|default:'/static/portfolio/img/cd-icon-picture.svg' }}">
         </div>
-        <div class="ce-timeline-content">
+        <div class="cd-timeline-content">
             <h2>{{ section.title }}</h2>
             <p>{{ section.description }}</p>
-            {% if section.link %}<a href="{{ section.link }}">{% trans "Read More" %}</a>{% endif %}
+            {% if section.link %}<a href="{{ section.link }}" class="cd-read-more">{% trans "Read More" %}</a>{% endif %}
             <span class="cd-date">{{ section.start }}</span>
         </div>
     </div>{% endfor %}

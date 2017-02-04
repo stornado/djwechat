@@ -28,7 +28,7 @@
     <link href="{% static 'portfolio/css/carousel.css' %}" rel="stylesheet">
     <link href="{% static 'portfolio/css/justified-nav.css' %}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="{% static 'portfolio/css/reset.css"> -->
-    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/vertical-timeline.css' %}">
     <!-- Resource style -->
     <script src="{% static 'portfolio/js/modernizr.js' %}"></script>
 </head>
@@ -46,6 +46,7 @@
     <script src="{% static 'portfolio/js/main.js' %}"></script>
     <!-- radar-chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" integrity="sha256-aUydBd3D3p3+5tVJXERlqMtoCej+p4tdD+dkJgeRWNU=" crossorigin="anonymous"></script> 
+    {% block radar_chart %}{% endblock radar_chart %}
 </body>
 
 </html>
