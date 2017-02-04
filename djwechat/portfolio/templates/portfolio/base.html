@@ -9,7 +9,6 @@
     <title>{% block title %}{% endblock title %}</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link href="{% static 'portfolio/css/base.css' %}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -30,7 +29,7 @@
     <!-- <link rel="stylesheet" href="{% static 'portfolio/css/reset.css"> -->
     <link rel="stylesheet" href="{% static 'portfolio/css/vertical-timeline.css' %}">
     <!-- Resource style -->
-    <script src="{% static 'portfolio/js/modernizr.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +42,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- cd-timeline -->
-    <script src="{% static 'portfolio/js/main.js' %}"></script>
+    <script src="{% static 'portfolio/js/vertical-timeline.js' %}"></script>
     <!-- radar-chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" integrity="sha256-aUydBd3D3p3+5tVJXERlqMtoCej+p4tdD+dkJgeRWNU=" crossorigin="anonymous"></script> 
     {% block radar_chart %}{% endblock radar_chart %}

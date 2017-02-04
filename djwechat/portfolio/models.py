@@ -18,8 +18,10 @@ class Banner(models.Model):
                              null=True, blank=True)
     link = models.URLField(verbose_name=_('Link'),
                            null=True, blank=True)
-    image = models.URLField(verbose_name=_('ImageURL'),
-                            null=True, blank=True)
+    image = models.CharField(verbose_name=_('Image'),
+                             max_length=200,
+                             help_text=_('The banner image url or data uri'),
+                             null=True, blank=True)
     description = models.TextField(verbose_name=_('Description'),
                                    null=True, blank=True)
     order = models.SmallIntegerField(verbose_name=_('Order'),

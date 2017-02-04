@@ -5,9 +5,7 @@ from models import Banner, Experience, Skill
 
 
 def home(request):
-    # template = 'portfolio/index.html'
-    template = 'portfolio/base_site.html'
-    # template = 'portfolio/verticaltimeline.html'
+    template = 'portfolio/index.html'
     context = {'banners': Banner.objects.all().order_by('order', 'id'),
                'experience': Experience.objects.all().order_by('start', 'id'),
                'skills': Skill.objects.all()}
