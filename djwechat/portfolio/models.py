@@ -124,7 +124,8 @@ class Experience(models.Model):
     ''' 时间节点，用于绘制时间轴timeline '''
     user = models.ForeignKey(verbose_name=_('User'), to=User)
     start = models.DateField(verbose_name=_('Start'))  # 经历开始时间
-    end = models.DateField(verbose_name=_('End'))  # 结束时间
+    end = models.DateField(verbose_name=_('End'),
+                           null=True, blank=True)  # 结束时间
     title = models.CharField(verbose_name=_('Title'), max_length=15)  # 标题
     description = models.TextField(verbose_name=_('Description'))  # 具体内容
     image = models.URLField(verbose_name=_('ImageURL'),
