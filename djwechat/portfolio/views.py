@@ -12,6 +12,7 @@ def home(request, uid=1):
     user = get_object_or_404(User, pk=uid)
     template = 'portfolio/index.html'
     context = {'banners': Banner.objects.all().order_by('order', 'id'),
+               'title': user.name,
                'experience': Experience.objects.filter(user=user).order_by('start', 'id'),
                'skills': Skill.objects.filter(user=user)}
     return render(request, template, context)
