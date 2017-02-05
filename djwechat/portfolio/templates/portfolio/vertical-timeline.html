@@ -1,14 +1,14 @@
-{% load i18n %}
+{% load i18n %}{% if experience %}
 <section id="cd-timeline" class="cd-container">{% for section in experience %}
-    <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-            <img src="{{ section.image|default:'/static/portfolio/img/cd-icon-picture.svg' }}">
-        </div>
-        <div class="cd-timeline-content">
-            <h2>{{ section.title }}</h2>
-            <p>{{ section.description }}</p>
-            {% if section.link %}<a href="{{ section.link }}" class="cd-read-more">{% trans "Read More" %}</a>{% endif %}
-            <span class="cd-date">{{ section.start }}</span>
-        </div>
-    </div>{% endfor %}
-</section>
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture">
+      <img src="{{ section.image|default:'/static/portfolio/img/cd-icon-picture.svg' }}">
+    </div>
+    <div class="cd-timeline-content">
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.description }}</p>
+      {% if section.link %}<a href="{{ section.link }}" class="cd-read-more">{% trans "Read More" %}</a>{% endif %}
+      <span class="cd-date">{{ section.start }}</span>
+    </div>
+  </div>{% endfor %}
+</section>{% endif %}

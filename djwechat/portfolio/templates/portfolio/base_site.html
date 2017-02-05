@@ -1,34 +1,31 @@
-{% extends "portfolio/base.html" %}{% load i18n static %} {% block title %} {{ title|default:_('Portfolio') }} {% endblock title %} {% block radar_chart %}
-<script>
+{% extends "portfolio/base.html" %}{% load i18n static %}{% block title %}{{ title|default:_('Portfolio') }}{% endblock title %}{% block radar_chart %}{% if skills %}<script>
 var data = {
-    labels: [{% for skill in skills %}"{{ skill.name }}",{% endfor %}],
-    datasets: [{
-        label: "{% trans 'My Skill Radar Chart' %}",
-        backgroundColor: "rgba(179,181,198,0.2)",
-        borderColor: "rgba(179,181,198,1)",
-        pointBackgroundColor: "rgba(179,181,198,1)",
-        pointBorderColor: "#fff",
-        pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "rgba(179,181,198,1)",
-        data: [{% for skill in skills %}{{ skill.level }},{% endfor %}]
-    }]
+  labels: [{% for skill in skills %}"{{ skill.name }}", {% endfor %}],
+  datasets: [{
+    label: "{% trans 'My Skill Radar Chart' %}",
+    backgroundColor: "rgba(179,181,198,0.2)",
+    borderColor: "rgba(179,181,198,1)",
+    pointBackgroundColor: "rgba(179,181,198,1)",
+    pointBorderColor: "#fff",
+    pointHoverBackgroundColor: "#fff",
+    pointHoverBorderColor: "rgba(179,181,198,1)",
+    data: [{% for skill in skills %}{{ skill.level }}, {% endfor %}]
+  }]
 };
 
 var options = {
-    scale: {
-        ticks: {
-            beginAtZero: true
-        }
+  scale: {
+    ticks: {
+      beginAtZero: true
     }
+  }
 };
 
 var ctx = $("#myRadarChart");
 
 var myRadarChart = new Chart(ctx, {
-    type: 'radar',
-    data: data,
-    options: options
+  type: 'radar',
+  data: data,
+  options: options
 });
-</script>
-
-{% endblock radar_chart %}
+</script>{% endif %}{% endblock radar_chart %}

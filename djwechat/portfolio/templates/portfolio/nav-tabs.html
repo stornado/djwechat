@@ -1,19 +1,19 @@
 {% load i18n static %}
 <div id="nav-tabs">
-    <!-- Nav tabs -->
-    <nav class="navbar">
-        <ul class="nav nav-tabs row" role="tablist">
-            <li role="presentation" class="col-xs-3 active"><a href="#vertical-timeline" aria-controls="vertical-timeline" role="tab" data-toggle="tab">{% trans "Experience" %}</a></li>
-            <li role="presentation" class="col-xs-3"><a href="#radar-chart" aria-controls="radar-chart" role="tab" data-toggle="tab">{% trans "Skills" %}</a></li>
-            <li role="presentation" class="col-xs-3"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-            <li role="presentation" class="col-xs-3"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-        </ul>
-    </nav>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="vertical-timeline">{% include "portfolio/vertical-timeline.html" %}</div>
-        <div role="tabpanel" class="tab-pane" id="radar-chart">{% include "portfolio/radar-chart.html" %}</div>
-        <div role="tabpanel" class="tab-pane" id="messages">messages</div>
-        <div role="tabpanel" class="tab-pane" id="settings">settings</div>
-    </div>
+  <!-- Nav tabs -->
+  <nav class="navbar">
+    <ul class="nav nav-tabs row" role="tablist">
+      <li role="presentation" class="col-xs-3 active"><a href="#vertical-timeline" aria-controls="vertical-timeline" role="tab" data-toggle="tab">{% trans "Experience" %}</a></li>
+      <li role="presentation" class="col-xs-3"><a href="#radar-chart" aria-controls="radar-chart" role="tab" data-toggle="tab">{% trans "Skills" %}</a></li>
+      <li role="presentation" class="col-xs-3"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+      <li role="presentation" class="col-xs-3"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
+  </nav>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="vertical-timeline">{% include "portfolio/vertical-timeline.html" %}</div>
+    <div role="tabpanel" class="tab-pane" id="radar-chart">{% include "portfolio/radar-chart.html" %}</div>
+    <div role="tabpanel" class="tab-pane" id="messages">messages</div>
+    <div role="tabpanel" class="tab-pane" id="settings">settings</div>
+  </div>
 </div>
