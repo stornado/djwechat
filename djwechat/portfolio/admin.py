@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from models import Banner, User, SNS, Skill, Experience, Works, Expection
+
+from .models import Banner
+from .models import Expection
+from .models import Experience
+from .models import SNS
+from .models import Skill
+from .models import User
+from .models import Works
+
 # Register your models here.
 
 admin.site.register(Banner)

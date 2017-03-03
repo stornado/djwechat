@@ -20,4 +20,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^portfolio/', include('portfolio.urls')),
+    url(r'^weixin/', include('weixin.urls')),
+    url(r'^rss/', include('rss.urls')),
 ]

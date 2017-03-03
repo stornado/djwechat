@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from models import CorpMenu
-from models import MPMenu
-from models import WeixinCorp
-from models import WeixinMP
+from .models import CorpMenu
+from .models import MPMenu
+from .models import WeixinCorp
+from .models import WeixinMP
 # Register your models here.
 
 
