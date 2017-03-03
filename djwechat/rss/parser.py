@@ -138,4 +138,4 @@ def update_articles(url):
             pass
         else:
             add_num += 1
-    return 0
+    return add_num
