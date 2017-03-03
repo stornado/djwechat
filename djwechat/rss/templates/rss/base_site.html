@@ -1,0 +1,16 @@
+{% extends "rss/base.html" %}
+{% block footer_script %}
+    <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $("img").load(function(){
+            $("div").removeAttr("style");
+            $("img").removeAttr("style");
+            $("img").removeAttr("width");
+            $("img").removeAttr("height");
+            // $("img").addClass("img-responsive");
+            $("#cnzz").attr("style","display:none;");
+            $("#webscan360").attr("style","display:none;");
+        });
+    </script>
+{% endblock footer_script %}

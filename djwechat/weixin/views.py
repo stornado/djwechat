@@ -1,17 +1,25 @@
 # -*- coding: utf-8 -*-
 
+
 from corp.WXBizMsgCrypt import WXBizMsgCrypt as CORP
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, get_list_or_404
+from django.shortcuts import get_list_or_404
+from django.shortcuts import get_object_or_404
 from django.views import View
-from models import WeixinCorp
-from models import WeixinMP
-from mp.WXBizMsgCrypt import WXBizMsgCrypt as MP
+
+
 try:
     from lxml import etree as ET
 except ImportError:
     import xml.etree.cElementTree as ET
-from message import WechatEcho
+
+
+from .message import WechatEcho
+from .mp.WXBizMsgCrypt import WXBizMsgCrypt as MP
+
+from .models import WeixinCorp
+from .models import WeixinMP
+
 # Create your views here.
 
 

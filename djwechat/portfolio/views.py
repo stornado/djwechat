@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
-from models import Banner
-from models import Experience
-from models import Skill
-from models import User
+from .models import Banner
+from .models import Experience
+from .models import Skill
+from .models import User
 # Create your views here.
 
 

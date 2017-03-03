@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-03 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\rss\apps.py:9
+msgid "Rss"
+msgstr ""
+
+#: .\rss\models.py:13 .\rss\models.py:66
+msgid "Title"
+msgstr ""
+
+#: .\rss\models.py:15
+msgid "Feed Link"
+msgstr ""
+
+#: .\rss\models.py:16
+msgid "Official Website"
+msgstr ""
+
+#: .\rss\models.py:17
+msgid "Subtitle"
+msgstr ""
+
+#: .\rss\models.py:19
+msgid "Description"
+msgstr ""
+
+#: .\rss\models.py:26
+msgid "Feed Channel"
+msgstr ""
+
+#: .\rss\models.py:27
+msgid "Feed Channels"
+msgstr ""
+
+#: .\rss\models.py:34
+msgid "Name"
+msgstr ""
+
+#: .\rss\models.py:36
+msgid "Homepage"
+msgstr ""
+
+#: .\rss\models.py:43
+msgid "Author"
+msgstr ""
+
+#: .\rss\models.py:44 .\rss\models.py:70
+msgid "Authors"
+msgstr ""
+
+#: .\rss\models.py:50
+msgid "Tag"
+msgstr ""
+
+#: .\rss\models.py:58
+msgid "Category"
+msgstr ""
+
+#: .\rss\models.py:59 .\rss\models.py:72
+msgid "Categories"
+msgstr ""
+
+#: .\rss\models.py:65
+msgid "FeedChannel"
+msgstr ""
+
+#: .\rss\models.py:68
+msgid "Link"
+msgstr ""
+
+#: .\rss\models.py:73
+msgid "Content"
+msgstr ""
+
+#: .\rss\models.py:74
+msgid "Published Time"
+msgstr ""
+
+#: .\rss\models.py:75
+msgid "Updated Time"
+msgstr ""
+
+#: .\rss\models.py:77
+msgid "Show"
+msgstr ""
+
+#: .\rss\models.py:78
+msgid "Whether to show"
+msgstr ""
+
+#: .\rss\models.py:85
+msgid "Article"
+msgstr ""
+
+#: .\rss\models.py:86
+msgid "Articles"
+msgstr ""
