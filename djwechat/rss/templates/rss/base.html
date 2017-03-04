@@ -124,9 +124,10 @@
                     <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                         {% autoescape off %}{{ article.content }}{% endautoescape %}
                     </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-50">
+                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                         <div class="mdl-layout__header-row">
                             {% for category in article.categories.all %}<strong>{{ category.tag }}</strong>{% empty %}{% endfor %}
+                            <div class="mdl-layout-spacer"></div>
                             <span>{{ article.publishedAt|date:"D d M" }}</span>
                             <div class="mdl-layout-spacer"></div>
                             <div class="mdl-layout--large-screen-only">
