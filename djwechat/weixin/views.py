@@ -50,7 +50,7 @@ class WechatMpServer(View):
         sToken = mp.token
         sEncodingAESKey = mp.aes_key
         sAppID = mp.appid
-        wxcpt = CORP(sToken, sEncodingAESKey, sAppID)
+        wxcpt = MP(sToken, sEncodingAESKey, sAppID)
 
         sReqMsgSig = request.GET.get('msg_signature')
         sReqTimeStamp = request.GET.get('timestamp')
