@@ -16,29 +16,26 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\weixin\admin.py:13 .\weixin\admin.py:24
 msgid "Advanced options"
-msgstr "高级选项"
+msgstr ""
 
 #: .\weixin\admin.py:22
 msgid "Team"
-msgstr "管理组"
+msgstr ""
 
 #: .\weixin\admin.py:23
-#, fuzzy
-#| msgid "AgentID"
 msgid "Agent"
-msgstr "应用ID"
+msgstr ""
 
 #: .\weixin\apps.py:9
 msgid "WEIXIN"
-msgstr "微信"
+msgstr ""
 
 #: .\weixin\models.py:18
 msgid "AppName"
-msgstr "公众号"
+msgstr ""
 
 #: .\weixin\models.py:19
 msgid "AppSecret"
@@ -58,53 +55,51 @@ msgstr ""
 
 #: .\weixin\models.py:25
 msgid "Expire Time"
-msgstr "过期时间"
+msgstr ""
 
 #: .\weixin\models.py:34
 msgid "AppID"
-msgstr "公众号ID"
+msgstr ""
 
 #: .\weixin\models.py:63
 msgid "WechatMP"
-msgstr "订阅号/服务号"
+msgstr ""
 
 #: .\weixin\models.py:64
 msgid "WechatMPs"
-msgstr "订阅号/服务号"
+msgstr ""
 
 #: .\weixin\models.py:74
 msgid "CorpID"
-msgstr "企业ID"
+msgstr ""
 
 #: .\weixin\models.py:75
-#, fuzzy
-#| msgid "AppName"
 msgid "CorpName"
-msgstr "公众号名称"
+msgstr ""
 
 #: .\weixin\models.py:76
 msgid "CorpSecret"
-msgstr "管理组密码"
+msgstr ""
 
 #: .\weixin\models.py:77
 msgid "AgentID"
-msgstr "应用ID"
+msgstr ""
 
 #: .\weixin\models.py:78
 msgid "AgentName"
-msgstr "应用名"
+msgstr ""
 
 #: .\weixin\models.py:107
 msgid "WechatCorp"
-msgstr "企业号: 管理组"
+msgstr ""
 
 #: .\weixin\models.py:108
 msgid "WechatCorps"
-msgstr "企业号: 管理组"
+msgstr ""
 
 #: .\weixin\models.py:114 .\weixin\models.py:157
 msgid "Menu"
-msgstr "菜单"
+msgstr ""
 
 #: .\weixin\models.py:115 .\weixin\models.py:158
 msgid ""
@@ -116,23 +111,19 @@ msgid ""
 "that the test can try to cancel attention after the attention of the "
 "enterprise number, you can see the effect after the creation."
 msgstr ""
-"目前自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。一级菜单"
-"最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“...”代替。请注意，创建自"
-"定义菜单后，由于微信客户端缓存，需要24小时微信客户端才会展现出来。建议测试时"
-"可以尝试取消关注企业号后再次关注，则可以看到创建后的效果。"
 
 #: .\weixin\models.py:150
 msgid "MPMenu"
-msgstr "公众号菜单"
+msgstr ""
 
 #: .\weixin\models.py:151
 msgid "MpMenus"
-msgstr "公众号菜单"
+msgstr ""
 
 #: .\weixin\models.py:193
 msgid "CorpMenu"
-msgstr "企业号: 应用菜单"
+msgstr ""
 
 #: .\weixin\models.py:194
 msgid "CorpMenus"
-msgstr "企业号: 应用菜单"
+msgstr ""

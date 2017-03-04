@@ -74,13 +74,13 @@
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
               <i class="material-icons">arrow_back</i>
             </button>
-            {% trans "Newer" %}
+            {% trans "Previous" %}
           </a>
           {% endif %}
           <div class="section-spacer"></div>
           {% if articles.has_next %}
           <a href="?page={{ articles.next_page_number }}">
-              {% trans "Older" %}
+              {% trans "Next" %}
               <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_forward</i>
               </button>

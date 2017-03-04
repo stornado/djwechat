@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-03 14:57+0800\n"
+"POT-Creation-Date: 2017-03-04 08:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,98 +17,107 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
 #: .\rss\apps.py:9
 msgid "Rss"
-msgstr ""
+msgstr "网源"
 
 #: .\rss\models.py:13 .\rss\models.py:66
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: .\rss\models.py:15
 msgid "Feed Link"
-msgstr ""
+msgstr "网源地址"
 
 #: .\rss\models.py:16
 msgid "Official Website"
-msgstr ""
+msgstr "官方网址"
 
 #: .\rss\models.py:17
 msgid "Subtitle"
-msgstr ""
+msgstr "副标题"
 
 #: .\rss\models.py:19
 msgid "Description"
-msgstr ""
+msgstr "简介"
 
-#: .\rss\models.py:26
+#: .\rss\models.py:26 .\rss\models.py:65
 msgid "Feed Channel"
-msgstr ""
+msgstr "网源"
 
 #: .\rss\models.py:27
 msgid "Feed Channels"
-msgstr ""
+msgstr "网源"
 
 #: .\rss\models.py:34
 msgid "Name"
-msgstr ""
+msgstr "姓名"
 
 #: .\rss\models.py:36
 msgid "Homepage"
-msgstr ""
+msgstr "主页"
 
 #: .\rss\models.py:43
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: .\rss\models.py:44 .\rss\models.py:70
 msgid "Authors"
-msgstr ""
+msgstr "作者"
 
 #: .\rss\models.py:50
 msgid "Tag"
-msgstr ""
+msgstr "标签"
 
 #: .\rss\models.py:58
 msgid "Category"
-msgstr ""
+msgstr "分类"
 
 #: .\rss\models.py:59 .\rss\models.py:72
 msgid "Categories"
-msgstr ""
-
-#: .\rss\models.py:65
-msgid "FeedChannel"
-msgstr ""
+msgstr "分类"
 
 #: .\rss\models.py:68
 msgid "Link"
-msgstr ""
+msgstr "链接"
 
 #: .\rss\models.py:73
 msgid "Content"
-msgstr ""
+msgstr "内容"
 
 #: .\rss\models.py:74
 msgid "Published Time"
-msgstr ""
+msgstr "发布时间"
 
 #: .\rss\models.py:75
 msgid "Updated Time"
-msgstr ""
+msgstr "更新时间"
 
 #: .\rss\models.py:77
 msgid "Show"
-msgstr ""
+msgstr "是否展示"
 
 #: .\rss\models.py:78
-msgid "Whether to show"
-msgstr ""
+msgid "Whether to show this article"
+msgstr "选择是否在主页展示该文章"
 
 #: .\rss\models.py:85
 msgid "Article"
-msgstr ""
+msgstr "文章"
 
 #: .\rss\models.py:86
 msgid "Articles"
-msgstr ""
+msgstr "文章"
+
+#: .\rss\templates\rss\base.html:77
+msgid "Previous"
+msgstr "前一页"
+
+#: .\rss\templates\rss\base.html:83
+msgid "Next"
+msgstr "下一页"
+
+#: .\rss\views.py:48
+msgid "FeedParser"
+msgstr "网源解析器"
