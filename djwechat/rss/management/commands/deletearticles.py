@@ -31,10 +31,13 @@ class Command(BaseCommand):
             detail = {}
             for article in articles:
                 try:
-                    deleted, detail = article.delete()
+                    deleted, deleted_detail = article.delete()
                 except Exception as e:
                     raise CommandError(e)
                 else:
                     deleted_num += deleted
+                    for key in deleted_detail.keys():
+                        mount = detail.get(key, 0)
+                        detail[key] = mount + deleted_detail[key]
             self.stdout.write(self.style.SUCCESS(
                 '%d objects deleted: %s' % (deleted_num, json.dumps(detail))))
