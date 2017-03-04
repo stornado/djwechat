@@ -14,7 +14,7 @@ class Command(BaseCommand):
     help = 'delete the specified mount article to retain'
 
     def add_arguments(self, parser):
-        parser.add_arguments('retention', default=100, type=int)
+        parser.add_argument('retention', default=100, type=int)
 
     def handle(self, *args, **options):
         try:
