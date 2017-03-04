@@ -31,9 +31,6 @@ class WechatMpServer(View):
         sToken = mp.token
         sEncodingAESKey = mp.aes_key
         sAppID = mp.appid
-        sToken = "QDG6eK"
-        sEncodingAESKey = "jWmYm7qr5nMoAUwZRjGtBxmz3KA1tkAj3ykkR6q2B2C"
-        sAppID = "wx5823bf96d3bd56c7"
         wxcpt = MP(sToken, sEncodingAESKey, sAppID)
 
         sVerifySign = request.GET.get('signature')
