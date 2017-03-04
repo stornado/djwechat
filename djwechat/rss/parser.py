@@ -41,7 +41,7 @@ def timestamp_to_datetime(timestamp):
     return datetime.fromtimestamp(timestamp)
 
 
-def datetime_to_string(datetime, fmt='%Y-%m-%d %H:%M:%S.%f'):
+def datetime_to_string(datetime, fmt='%Y-%m-%d %H:%M:%S.%f%Z'):
     '''YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]'''
     return datetime.strftime(fmt)
 
