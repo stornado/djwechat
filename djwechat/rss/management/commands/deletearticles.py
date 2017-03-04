@@ -7,7 +7,7 @@
 
 from django.core.management.base import BaseCommand, CommandError
 
-from rss.models import Articles
+from rss.models import Article
 
 
 class Command(BaseCommand):
@@ -21,7 +21,7 @@ class Command(BaseCommand):
             retention = options['retention']
             articles = Article.objects.order_by(
                 '-publishedAt', '-updatedAt')[:retention]
-        except Articles.DoesNotExist:
+        except Article.DoesNotExist:
             raise CommandError('Please add feed first')
         else:
             deleted_num = 0
