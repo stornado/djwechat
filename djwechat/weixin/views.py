@@ -41,7 +41,7 @@ class WechatMpServer(View):
             sVerifySign, sVerifyTimeStamp, sVerifyNonce, sVerifyEchoStr)
 
         if(ret != 0):
-            return HttpResponse("ERR: VerifyURL ret: %d" % ret)
+            return HttpResponse("ERR: VerifyURL ret: %d, echostr: %s" % (ret, sEchoStr))
 
         return HttpResponse(sEchoStr)
 
