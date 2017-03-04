@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """djwechat URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:

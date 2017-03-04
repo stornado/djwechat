@@ -63,7 +63,7 @@
             <div class="minilogo"></div>
             <div>
               {% for category in article.categories.all %}<strong>{{ category.tag }}</strong>{% empty %}{% endfor %}
-              <span>{{ article.published|time:"TIME_FORMAT" }}</span>
+              <span>{{ article.publishedAt|time:"TIME_FORMAT" }}</span>
             </div>
           </div>
         </div>
