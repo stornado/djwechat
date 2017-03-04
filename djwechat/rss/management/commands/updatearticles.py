@@ -7,7 +7,7 @@
 
 from django.core.management.base import BaseCommand, CommandError
 
-from rss.models import FeedChannel, Article
+from rss.models import FeedChannel
 from rss.parser import update_articles
 
 
