@@ -70,6 +70,29 @@
     a.title {
         text-decoration: none;
     }
+    
+    .paginator {
+        margin: 12px 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-weight: 500;
+    }
+    
+    .paginator a {
+        text-decoration: none;
+    }
+    
+    .mdl-mini-footer {
+        margin-top: 80px;
+        height: 120px;
+        padding: 40px;
+        align-items: center;
+        background-color: lightgrey;
+        box-sizing: border-box;
+    }
     </style>
 </head>
 
@@ -110,7 +133,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                <nav class="mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+                <nav class="paginator mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
                     {% if articles.has_previous %}
                     <a href="?page={{ articles.previous_page_number }}">
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
