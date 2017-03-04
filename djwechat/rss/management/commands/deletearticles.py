@@ -5,9 +5,12 @@
 # @Link    : https://github.com/stornado
 # @Version : $Id$
 
+
 from django.core.management.base import BaseCommand, CommandError
 
 from rss.models import Article
+
+import json
 
 
 class Command(BaseCommand):
@@ -20,17 +23,18 @@ class Command(BaseCommand):
         try:
             retention = options['retention']
             articles = Article.objects.order_by(
-                '-publishedAt', '-updatedAt')[:retention]
+                '-publishedAt', '-updatedAt')[retention:]
         except Article.DoesNotExist:
             raise CommandError('Please add feed first')
         else:
             deleted_num = 0
+            detail = {}
             for article in articles:
                 try:
-                    deleted, _ = article.delete()
+                    deleted, detail = article.delete()
                 except Exception as e:
                     raise CommandError(e)
                 else:
                     deleted_num += deleted
             self.stdout.write(self.style.SUCCESS(
-                '%d articles deleted' % deleted_num))
+                '%d objects deleted: %s' % (deleted_num, json.dumps(detail))))
