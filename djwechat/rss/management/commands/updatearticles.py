@@ -31,4 +31,5 @@ class Command(BaseCommand):
                     raise CommandError(e)
                 else:
                     updated_num += updated
-            self.stdout.write(self.style.SUCCESS('%d articles updated' % updated_num))
+            self.stdout.write(self.style.SUCCESS(
+                '%d articles updated' % updated_num))
