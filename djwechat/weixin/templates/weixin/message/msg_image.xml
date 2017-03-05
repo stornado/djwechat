@@ -1,4 +1,4 @@
-<xml>
+{% autoescape off %}<xml>
   <ToUserName><![CDATA[{{ toUser }}]]></ToUserName>
   <FromUserName><![CDATA[{{ fromUser }}]]></FromUserName>
   <CreateTime>{{ createTime }}</CreateTime>
@@ -6,4 +6,4 @@
   <Image>
     <MediaId><![CDATA[{{ media_id }}]]></MediaId>
   </Image>
-</xml>
+</xml>{% endautoescape %}
