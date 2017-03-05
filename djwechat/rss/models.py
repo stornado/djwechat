@@ -62,7 +62,7 @@ class Category(models.Model):
 @python_2_unicode_compatible
 class Article(models.Model):
     channel = models.ForeignKey(to=FeedChannel,
-                                verbose_name=_('FeedChannel'))
+                                verbose_name=_('Feed Channel'))
     title = models.CharField(verbose_name=_('Title'),
                              max_length=255)
     link = models.URLField(verbose_name=_('Link'))
@@ -75,7 +75,7 @@ class Article(models.Model):
     updatedAt = models.DateTimeField(verbose_name=_('Updated Time'),
                                      auto_now=True)
     show = models.BooleanField(verbose_name=_('Show'),
-                               help_text=_('Whether to show'),
+                               help_text=_('Whether to show this article'),
                                default=True)
 
     def __str__(self):

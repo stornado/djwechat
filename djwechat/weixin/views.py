@@ -31,9 +31,6 @@ class WechatMpServer(View):
         sToken = mp.token
         sEncodingAESKey = mp.aes_key
         sAppID = mp.appid
-        sToken = "QDG6eK"
-        sEncodingAESKey = "jWmYm7qr5nMoAUwZRjGtBxmz3KA1tkAj3ykkR6q2B2C"
-        sAppID = "wx5823bf96d3bd56c7"
         wxcpt = MP(sToken, sEncodingAESKey, sAppID)
 
         sVerifySign = request.GET.get('signature')
@@ -44,7 +41,7 @@ class WechatMpServer(View):
             sVerifySign, sVerifyTimeStamp, sVerifyNonce, sVerifyEchoStr)
 
         if(ret != 0):
-            return HttpResponse("ERR: VerifyURL ret: %d" % ret)
+            return HttpResponse("ERR: VerifyURL ret: %d, echostr: %s" % (ret, sEchoStr))
 
         return HttpResponse(sEchoStr)
 
@@ -53,7 +50,7 @@ class WechatMpServer(View):
         sToken = mp.token
         sEncodingAESKey = mp.aes_key
         sAppID = mp.appid
-        wxcpt = CORP(sToken, sEncodingAESKey, sAppID)
+        wxcpt = MP(sToken, sEncodingAESKey, sAppID)
 
         sReqMsgSig = request.GET.get('msg_signature')
         sReqTimeStamp = request.GET.get('timestamp')

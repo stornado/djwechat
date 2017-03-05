@@ -31,10 +31,10 @@ def home(request):
     accessible_articles = get_list_or_404(Article, show=True)
 
     try:
-        limit = request.GET.get('limit', request.POST.get('limit', 20))
+        limit = request.GET.get('limit', request.POST.get('limit', 5))
         limit = int(limit)
     except:
-        limit = 20
+        limit = 5
     paginator = Paginator(accessible_articles, limit)
 
     page = request.GET.get('page', request.POST.get('page', 1))
@@ -45,14 +45,14 @@ def home(request):
     except EmptyPage:
         articles = paginator.page(paginator.num_pages)
     finally:
-        rss_page = Page(title=_('Rss'))
+        rss_page = Page(title=_('FeedParser'))
         return render(request, 'rss/index.html',
                       {'articles': articles,
                        'page': rss_page})
 
 
 def manifest(request):
-    return JsonResponse({'name': 'rss'})
+    return JsonResponse({'name': 'FeedParser'})
 
 
 def add_feed(request):
@@ -67,6 +67,9 @@ def add_feed(request):
 def update_feed(request):
     feeds = get_list_or_404(FeedChannel)
     add_num = 0
-    for feed in feeds:
-        add_num += update_articles(feed.link)
+    try:
+        for feed in feeds:
+            add_num += update_articles(feed.link)
+    except Exception as e:
+        return JsonResponse({'code': 500, 'message': e})
     return JsonResponse({'code': 200, 'message': '%d articles updated' % add_num})

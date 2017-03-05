@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for djwechat project.
 
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'zh-CN'
+LANGUAGE_CODE = 'zh-Hans'
 LOCALE_PATHS = (os.path.join(BASE_DIR, 'portfolio',
                              'locale').replace('\\', '/'),)
 
