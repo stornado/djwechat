@@ -76,7 +76,7 @@ class WechatMpServer(View):
         if 'text' == msg_type.lower():
             respContent = xml_tree.find('Content').text.encode('utf-8')
         else:
-            respContent = 'TO:%s,From:%s,Type:%s,MsgID:%d,Create:%d' % (
+            respContent = 'TO:%s,From:%s,Type:%s,MsgID:%s,Create:%s' % (
                 to_username, from_username, msg_type, msgid, create_time)
         sRespData = echo.reply_text(respContent)
 
@@ -132,7 +132,7 @@ class WechatCorpServer(View):
         msgid = xml_tree.find('MsgId').text
         create_time = xml_tree.find('CreateTime').text
         echo = WechatEcho(toUser=from_username, fromUser=to_username)
-        sRespData = echo.reply_text('TO:%s,From:%s,Type:%s,MsgID:%d,Create:%d' % (
+        sRespData = echo.reply_text('TO:%s,From:%s,Type:%s,MsgID:%s,Create:%s' % (
             to_username, from_username, msg_type, msgid, create_time))
 
         ret, sEncryptMsg = wxcpt.EncryptMsg(
