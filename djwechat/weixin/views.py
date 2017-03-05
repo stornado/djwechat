@@ -24,7 +24,7 @@ from .models import WeixinMP
 
 
 class WechatMpServer(View):
-    '''Î¢ĞÅ¶©ÔÄºÅ/·şÎñºÅ'''
+    '''å¾®ä¿¡è®¢é˜…å·/æœåŠ¡å·'''
 
     def get(self, request, appid):
         mp = get_object_or_404(WeixinMP, appid=appid)
@@ -88,7 +88,7 @@ class WechatMpServer(View):
 
 
 class WechatCorpServer(View):
-    '''Î¢ĞÅÆóÒµºÅ'''
+    '''å¾®ä¿¡ä¼ä¸šå·'''
 
     def get(self, request, corpid, agentid):
         corp = get_list_or_404(WeixinCorp, corpid=corpid, agentid=agentid)[0]
