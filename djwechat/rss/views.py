@@ -71,5 +71,5 @@ def update_feed(request):
         for feed in feeds:
             add_num += update_articles(feed.link)
     except Exception as e:
-        return JsonResponse({'code': 500, 'message': e})
+        return JsonResponse({'code': 500, 'message': repr(e)})
     return JsonResponse({'code': 200, 'message': '%d articles updated' % add_num})

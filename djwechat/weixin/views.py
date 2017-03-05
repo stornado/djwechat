@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from __future__ import unicode_literals
 
 from corp.WXBizMsgCrypt import WXBizMsgCrypt as CORP
 from django.http import HttpResponse
@@ -71,9 +71,14 @@ class WechatMpServer(View):
         msg_type = xml_tree.find('MsgType').text
         msgid = xml_tree.find('MsgId').text
         create_time = xml_tree.find('CreateTime').text
+
         echo = WechatEcho(toUser=from_username, fromUser=to_username)
-        sRespData = echo.reply_text('TO:%s,From:%s,Type:%s,MsgID:%d,Create:%d' % (
-            to_username, from_username, msg_type, msgid, create_time))
+        if 'text' == msg_type.lower():
+            respContent = xml_tree.find('Content').text.encode('utf-8')
+        else:
+            respContent = 'TO:%s,From:%s,Type:%s,MsgID:%d,Create:%d' % (
+                to_username, from_username, msg_type, msgid, create_time)
+        sRespData = echo.reply_text(respContent)
 
         ret, sEncryptMsg = wxcpt.EncryptMsg(
             sRespData, sReqNonce, sReqTimeStamp)

@@ -6,6 +6,7 @@
 
 """
 # ------------------------------------------------------------------------
+from __future__ import unicode_literals
 
 import base64
 import hashlib
@@ -50,7 +51,8 @@ class SHA1:
         @return: 安全签名
         """
         try:
-            if encrypt is None: encrypt = ''
+            if encrypt is None:
+                encrypt = ''
             sortlist = [token, timestamp, nonce, encrypt]
             sortlist.sort()
             sha = hashlib.sha1()
