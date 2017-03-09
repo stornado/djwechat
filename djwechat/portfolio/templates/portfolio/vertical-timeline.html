@@ -6,7 +6,7 @@
     </div>
     <div class="cd-timeline-content">
       <h2>{{ section.title }}</h2>
-      <p>{{ section.description }}</p>
+      <p>{{ section.description|linebreaksbr }}</p>
       {% if section.link %}<a href="{{ section.link }}" class="cd-read-more">{% trans "Read More" %}</a>{% endif %}
       <span class="cd-date">{{ section.start }}</span>
     </div>

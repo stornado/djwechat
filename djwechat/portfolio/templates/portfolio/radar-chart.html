@@ -7,7 +7,7 @@
     {% for skill in skills %}
     <div class="skill">
       <h2>{{ skill.name }}</h2>
-      <p>{{ skill.description }}</p>
+      <p>{{ skill.description|linebreaksbr }}</p>
     </div>
     {% endfor %}
   </div>
