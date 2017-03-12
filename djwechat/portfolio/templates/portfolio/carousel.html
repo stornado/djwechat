@@ -2,13 +2,13 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     {% for banner in banners %}
-    <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.counter0 == 0 %} class="active">{% endif %}</li>
+    <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.counter0==0 %} class="active">{% endif %}</li>
     {% endfor %}
   </ol>
   <div class="carousel-inner" role="listbox">
     {% for banner in banners %}
-    <a href="{{ banner.link|default:'#' }}">
-      <div class="item{% if forloop.counter0 == 0 %} active{% endif %}">
+    <div class="item{% if forloop.counter0 == 0 %} active{% endif %}">
+      <a href="{{ banner.link|default:'#' }}">
         <img src="{{ banner.image|default:'data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}" alt="{{ banner.title }}">
         <div class="container">
           <div class="carousel-caption">
@@ -16,8 +16,8 @@
             <p>{{ banner.description }}</p>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
     {% endfor %}
   </div>
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
