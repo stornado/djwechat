@@ -208,6 +208,7 @@
     }
 
     function drawImage(data) {
+        console.log("DrawImage data: " + data);
         var template = "";
         try {
             template += "<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">\n";
@@ -236,7 +237,8 @@
     }
 
     // 绘制一行图片
-    function drawOnwRowOfImages(row) {
+    function drawOneRowOfImages(row) {
+        console.log("DrawOneRow data: " + row);
         var template = "";
         for (var i = 0; i < 12; i++) {
             try {
@@ -309,7 +311,7 @@
                 if (data.length === 0) {
                     $("#loader").after("<div class=\"alert alert-warning\" role=\"alert\">没有更多</div>");
                 } else {
-                    var htmlString = drawOnwRowOfImages(data);
+                    var htmlString = drawOneRowOfImages(data);
                     $("#loader").append(htmlString);
                 }
             },
