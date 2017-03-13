@@ -109,11 +109,11 @@ msgstr "文章"
 msgid "Articles"
 msgstr "文章"
 
-#: .\rss\templates\rss\base.html:77
+#: .\rss\templates\rss\base.html:146
 msgid "Previous"
 msgstr "前一页"
 
-#: .\rss\templates\rss\base.html:83
+#: .\rss\templates\rss\base.html:152
 msgid "Next"
 msgstr "下一页"
 
