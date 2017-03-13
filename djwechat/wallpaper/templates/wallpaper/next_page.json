@@ -1,9 +1,10 @@
 [
-  {% for image in images %}{
+{% for image in images %}  {
     "oid": "{{ image.uuid }}",
     "name": "{{ image.title }}",
+    "url": "{{ image.url }}",
     "tags": [
-      {% for tag in image.tags.all %}"{{tag}}"{% if not forloop.last %},{% endif %}
+{% for tag in image.tags.all %}    "{{tag}}"{% if not forloop.last %},{% endif %}
     {% empty %}{% endfor %}],
     "pubDate": "{{ image.publishedAt }}"
   }{% if not forloop.last %},{% endif %}
