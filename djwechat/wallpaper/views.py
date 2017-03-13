@@ -33,7 +33,7 @@ def next(request):
     except EmptyPage:
         images = paginator.page(paginator.num_pages)
     finally:
-        return render(request, 'wallpaper/next-page.json', {'images': image}, content_type='application/json; charset=UTF-8')
+        return render(request, 'wallpaper/next_page.json', {'images': images}, content_type='application/json; charset=UTF-8')
 
 
 def search(request):
