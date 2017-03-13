@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'portfolio',
     'weixin',
     'rss',
+    'wallpaper',
 ]
 
 MIDDLEWARE = [

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from corp.WXBizMsgCrypt import WXBizMsgCrypt as CORP
+
 from django.http import HttpResponse
 from django.shortcuts import get_list_or_404
 from django.shortcuts import get_object_or_404
@@ -14,6 +14,7 @@ except ImportError:
     import xml.etree.cElementTree as ET
 
 
+from .corp.WXBizMsgCrypt import WXBizMsgCrypt as CORP
 from .message import WechatEcho
 from .mp.WXBizMsgCrypt import WXBizMsgCrypt as MP
 
