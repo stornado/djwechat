@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^portfolio/', include('portfolio.urls')),
     url(r'^weixin/', include('weixin.urls')),
     url(r'^rss/', include('rss.urls')),
+    url(r'^wallpaper/', include('wallpaper.urls')),
 ]

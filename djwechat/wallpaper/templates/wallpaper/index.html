@@ -170,7 +170,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <p class="navbar-text hidden-xs">浏览更多精彩内容，请<a href="https://www.lovebizhi.com/" class="navbar-link" rel="nofollow">下载爱壁纸HD</a></p>
-                <form action="/wallpaper/search/" class="navbar-form navbar-right" method="POST" role="search">
+                <form action="{% url 'wallpaper-search' %}" class="navbar-form navbar-right" method="POST" role="search">
                     {% csrf_token %}
                     <div class="form-group">
                         <div class="input-group">
@@ -296,7 +296,7 @@
 
     function getOneRowData(rownum) {
         $.ajax({
-            url: "/wallpaper/next.php",
+            url: "{% url 'wallpaper-next-page' %}",
             data: {
                 page: rownum,
                 limit: 12,
