@@ -26,6 +26,9 @@ class Image(models.Model):
     tags = models.ManyToManyField(Tag, verbose_name=_('Tags'))
     publishedAt = models.DateField(verbose_name=_('Published Date'))
     uuid = models.CharField(verbose_name=_('UUID'), max_length=32)
+    show = models.BooleanField(verbose_name=_('Show'),
+                               help_text=_('Whether to show this image'),
+                               default=True)
 
     def __str__(self):
         return self.title

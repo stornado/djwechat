@@ -17,7 +17,7 @@ def home(request):
 
 
 def next(request):
-    all_images = get_list_or_404(Image)
+    all_images = get_list_or_404(Image, show=True)
     try:
         limit = request.GET.get('limit', request.POST.get('limit', 5))
         limit = int(limit)
