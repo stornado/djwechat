@@ -24,7 +24,8 @@ class Image(models.Model):
     title = models.CharField(verbose_name=_('title'), max_length=25)
     url = models.URLField(verbose_name=_('URL'))
     tags = models.ManyToManyField(Tag, verbose_name=_('Tags'))
-    publishedAt = models.DateField(verbose_name=_('Published Date'))
+    publishedAt = models.DateField(verbose_name=_('Published Date'),
+                                   auto_now_add=True)
     uuid = models.CharField(verbose_name=_('UUID'), max_length=32)
     show = models.BooleanField(verbose_name=_('Show'),
                                help_text=_('Whether to show this image'),

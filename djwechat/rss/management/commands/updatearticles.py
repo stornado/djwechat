@@ -5,7 +5,10 @@
 # @Link    : https://github.com/stornado
 # @Version : $Id$
 
-from django.core.management.base import BaseCommand, CommandError
+import multiprocessing
+
+from django.core.management.base import BaseCommand
+from django.core.management.base import CommandError
 
 from rss.models import FeedChannel
 from rss.parser import update_articles
@@ -24,12 +27,17 @@ class Command(BaseCommand):
             raise CommandError('Please add feed first')
         else:
             updated_num = 0
+
+            links = []
             for feed_channel in feed_channels:
-                try:
-                    updated = update_articles(feed_channel.link)
-                except Exception as e:
-                    raise CommandError(e)
-                else:
-                    updated_num += updated
+                links.append(feed_channel.link)
+
+            try:
+                pool = multiprocessing.Pool()
+                results = pool.map(update_articles, links)
+                updated_num = sum(results)
+            except Exception as e:
+                raise CommandError(e)
+
             self.stdout.write(self.style.SUCCESS(
                 '%d articles updated' % updated_num))
