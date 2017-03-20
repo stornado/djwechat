@@ -14,12 +14,14 @@ import random
 import socket
 import string
 import struct
+import sys
 import time
 import xml.etree.cElementTree as ET
 
-import ierror
-
 from Crypto.Cipher import AES
+reload(sys)
+import ierror
+sys.setdefaultencoding('utf-8')
 
 """
 关于Crypto.Cipher模块，ImportError: No module named 'Crypto'解决方案
