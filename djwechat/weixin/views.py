@@ -78,7 +78,7 @@ class WechatMpServer(View):
         if 'text' == msg_type.lower():
             content = xml_tree.find('Content').text
             received = content
-        respContent = 'Received: %s\n推荐几篇文章给你看看 <a href="https://zxye.me/rss/">网源解析器</a>' % content
+        respContent = 'Received: %s\n推荐几篇文章给你看看 <a href="https://zxye.me/rss/">网源解析器</a>' % received
         sRespData = echo.reply_text(respContent)
 
         ret, sEncryptMsg = wxcpt.EncryptMsg(
