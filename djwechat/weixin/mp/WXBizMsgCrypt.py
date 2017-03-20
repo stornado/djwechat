@@ -116,6 +116,7 @@ class PKCS7Encoder():
         @param text: 需要进行填充补位操作的明文
         @return: 补齐明文字符串
         """
+        text = text.encode('utf-8')
         text_length = len(text)
         # 计算需要填充的位数
         amount_to_pad = self.block_size - (text_length % self.block_size)
@@ -150,6 +151,7 @@ class Prpcrypt(object):
         @param text: 需要加密的明文
         @return: 加密得到的字符串
         """
+        text = text.encode('utf-8')
         # 16位随机字符串添加到明文开头
         text = self.get_random_str() + struct.pack("I", socket.htonl(len(text))) + text + appid
         # 使用自定义的填充方式对明文进行补位填充

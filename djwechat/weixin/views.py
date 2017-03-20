@@ -74,11 +74,11 @@ class WechatMpServer(View):
         create_time = xml_tree.find('CreateTime').text
 
         echo = WechatEcho(toUser=from_username, fromUser=to_username)
+        received = msg_type
         if 'text' == msg_type.lower():
-            respContent = xml_tree.find('Content').text.encode('utf-8')
-        else:
-            respContent = 'TO:%s,From:%s,Type:%s,MsgID:%s,Create:%s' % (
-                to_username, from_username, msg_type, msgid, create_time)
+            content = xml_tree.find('Content').text
+            received = content
+        respContent = 'Received: %s\n推荐几篇文章给你看看 <a href="https://zxye.me/rss/">网源解析器</a>' % content
         sRespData = echo.reply_text(respContent)
 
         ret, sEncryptMsg = wxcpt.EncryptMsg(
