@@ -13,14 +13,12 @@ import random
 import socket
 import string
 import struct
-import sys
 import time
 import xml.etree.cElementTree as ET
 
-from Crypto.Cipher import AES
-reload(sys)
 import ierror
-sys.setdefaultencoding('utf-8')
+
+from Crypto.Cipher import AES
 
 """
 关于Crypto.Cipher模块，ImportError: No module named 'Crypto'解决方案
@@ -72,7 +70,7 @@ class XMLParse:
 </xml>"""
 
     def extract(self, xmltext):
-        """提取出xml数据包中的加密消息 
+        """提取出xml数据包中的加密消息
         @param xmltext: 待提取的xml字符串
         @return: 提取出的加密消息字符串
         """
@@ -113,6 +111,7 @@ class PKCS7Encoder():
         @param text: 需要进行填充补位操作的明文
         @return: 补齐明文字符串
         """
+        text = text.encode('utf-8')
         text_length = len(text)
         # 计算需要填充的位数
         amount_to_pad = self.block_size - (text_length % self.block_size)
@@ -147,6 +146,7 @@ class Prpcrypt(object):
         @param text: 需要加密的明文
         @return: 加密得到的字符串
         """
+        text = text.encode('utf-8')
         # 16位随机字符串添加到明文开头
         text = self.get_random_str() + struct.pack("I", socket.htonl(len(text))) + text + corpid
         # 使用自定义的填充方式对明文进行补位填充
@@ -164,7 +164,7 @@ class Prpcrypt(object):
 
     def decrypt(self, text, corpid):
         """对解密后的明文进行补位删除
-        @param text: 密文 
+        @param text: 密文
         @return: 删除填充补位后的明文
         """
         try:
