@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+
+import os.path
+import requests
+
 from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
 from django.core.paginator import Paginator
@@ -46,3 +50,24 @@ def next(request):
 def search(request):
     keyword = request.POST.get('keyword', '')
     return render(request, 'wallpaper/index.html', {'keyword': keyword})
+
+
+def validate(request):
+    all_images = get_list_or_404(Image)
+    update_counts = 0
+    for image in all_images:
+        url = image.url
+        http_status_code = requests.head(url)
+        if not http_status_code == 200:
+            path, ext = os.path.splitext(url)
+            url2 = path + '.webp' if ext.lower() in ['.jpg', '.jpeg'] else url
+            if ext.lower() == '.webp':
+                url2 = path + '.jpg'
+            http_status_code2 = requests.head(url2)
+            if http_status_code2 == 200:
+                image.url = url2
+                update_counts += 1
+            else:
+                image.show = False
+            image.save()
+    return JsonResponse({'code': 200, 'message': 'updated {0:d}'.format(update_counts)})
