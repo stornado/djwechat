@@ -44,4 +44,5 @@ def next(request):
 
 
 def search(request):
+    keyword = request.POST.get('keyword', '')
     return render(request, 'wallpaper/index.html', {'keyword': keyword})
