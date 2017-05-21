@@ -53,7 +53,12 @@ def search(request):
 
 
 def validate(request):
-    all_images = get_list_or_404(Image)
+    validator_scope = request.GET.get('scope', False)
+    if validator_scope:
+        all_images = get_list_or_404(Image)
+    else:
+        all_images = get_list_or_404(Image, show=True)
+        
     update_counts = 0
     for image in all_images:
         url = image.url
