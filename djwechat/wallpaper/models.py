@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 @python_2_unicode_compatible
 class Tag(models.Model):
-    name = models.CharField(verbose_name=_('Name'), max_length=25)
+    name = models.CharField(verbose_name=_('Name'), max_length=25, db_index=True)
 
     def __str__(self):
         return self.name
@@ -35,5 +35,6 @@ class Image(models.Model):
         return self.title
 
     class Meta:
+        ordering = ['title']
         verbose_name = _('Image')
         verbose_name_plural = _('Images')
