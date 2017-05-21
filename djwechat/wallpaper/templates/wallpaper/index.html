@@ -174,7 +174,7 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="keyword" placeholder="Search...">
+                            <input type="text" class="form-control" name="keyword" placeholder="Search..."{% if keyword %} value="{{ keyword }}"{% endif %}>
                             <span class="input-group-btn"><button class="btn btn-default" type="submit">Go!</button></span>
                         </div>
                     </div>
