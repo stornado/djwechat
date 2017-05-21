@@ -70,8 +70,7 @@ def validate(request):
             else:
                 image.show = False
             image.save()
-        else:
-            if not image.show:
-                image.show = True
-                image.save()
+        elif not image.show:
+            image.show = True
+            image.save()
     return JsonResponse({'code': 200, 'message': 'updated {0:d}'.format(update_counts)})
