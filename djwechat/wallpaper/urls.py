@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^$', views.home, name='wallpaper-index'),
     url(r'^next/$', views.next, name='wallpaper-next-page'),
     url(r'^search/$', views.search, name='wallpaper-search'),
-    url(r'^validate/$', views.search, name='wallpaper-validate'),
+    url(r'^validate/$', views.validate, name='wallpaper-validate'),
 ]
