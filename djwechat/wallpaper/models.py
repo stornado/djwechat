@@ -21,7 +21,7 @@ class Tag(models.Model):
 
 @python_2_unicode_compatible
 class Image(models.Model):
-    title = models.CharField(verbose_name=_('title'), max_length=25)
+    title = models.CharField(verbose_name=_('title'), max_length=25, db_index=True)
     url = models.URLField(verbose_name=_('URL'), unique=True)
     tags = models.ManyToManyField(Tag, verbose_name=_('Tags'))
     publishedAt = models.DateField(verbose_name=_('Published Date'),
