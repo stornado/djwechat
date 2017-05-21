@@ -300,7 +300,9 @@
         $.ajax({
             url: "{% url 'wallpaper-next-page' %}",
             data: {
-                page: rownum,
+                {% if keyword %}
+                keyword: {{ keyword }},
+            {% endif %}page: rownum,
                 limit: 12,
                 timestamp: now / 1000
             },
