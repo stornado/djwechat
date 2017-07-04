@@ -75,11 +75,16 @@ class WechatMpServer(View):
 
         echo = WechatEcho(toUser=from_username, fromUser=to_username)
         received = msg_type
+        sRespData = ''
         if 'text' == msg_type.lower():
             content = xml_tree.find('Content').text
             received = content
-        respContent = 'Received: %s\n推荐几篇文章给你看看 <a href="https://zxye.me/rss/">网源解析器</a>' % received
-        sRespData = echo.reply_text(respContent)
+            respContent = 'Received: %s\n推荐几篇文章给你看看 <a href="https://zxye.me/rss/">网源解析器</a>' % received
+            sRespData = echo.reply_text(respContent)
+
+        elif 'image' == msg_type.lower():
+            media_id = xml_tree.find('MediaId').text
+            sRespData = echo.reply_image(media_id)
 
         ret, sEncryptMsg = wxcpt.EncryptMsg(
             sRespData, sReqNonce, sReqTimeStamp)
