@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#-*- encoding:utf-8 -*-
+# -*- encoding:utf-8 -*-
 
 """ 对公众平台发送给公众账号的消息加解密示例代码.
 @copyright: Copyright (c) 1998-2014 Tencent Inc.
@@ -17,11 +17,11 @@ import sys
 import time
 import xml.etree.cElementTree as ET
 
-import ierror
-
 from Crypto.Cipher import AES
+
 reload(sys)
 import ierror
+
 sys.setdefaultencoding('utf-8')
 
 """
@@ -140,7 +140,7 @@ class Prpcrypt(object):
     """提供接收和推送给公众平台消息的加解密接口"""
 
     def __init__(self, key):
-        #self.key = base64.b64decode(key+"=")
+        # self.key = base64.b64decode(key+"=")
         self.key = key
         # 设置加解密模式为AES的CBC模式
         self.mode = AES.MODE_CBC
@@ -181,8 +181,8 @@ class Prpcrypt(object):
         try:
             pad = ord(plain_text[-1])
             # 去掉补位字符串
-            #pkcs7 = PKCS7Encoder()
-            #plain_text = pkcs7.encode(plain_text)
+            # pkcs7 = PKCS7Encoder()
+            # plain_text = pkcs7.encode(plain_text)
             # 去除16位随机字符串
             content = plain_text[16:-pad]
             xml_len = socket.ntohl(struct.unpack("I", content[: 4])[0])
@@ -206,7 +206,7 @@ class Prpcrypt(object):
 
 class WXBizMsgCrypt(object):
     # 构造函数
-    #@param sToken: 公众平台上，开发者设置的Token
+    # @param sToken: 公众平台上，开发者设置的Token
     # @param sEncodingAESKey: 公众平台上，开发者设置的EncodingAESKey
     # @param sCorpId: 企业号的CorpId
 
@@ -217,17 +217,18 @@ class WXBizMsgCrypt(object):
         except:
             throw_exception(
                 "[error]: EncodingAESKey unvalid !", FormatException)
-           # return ierror.WXBizMsgCrypt_IllegalAesKey)
+            # return ierror.WXBizMsgCrypt_IllegalAesKey)
         self.m_sToken = sToken
         self.m_sCorpid = sCorpId
 
         # 验证URL
-        #@param sMsgSignature: 签名串，对应URL参数的msg_signature
-        #@param sTimeStamp: 时间戳，对应URL参数的timestamp
-        #@param sNonce: 随机串，对应URL参数的nonce
-        #@param sEchoStr: 随机串，对应URL参数的echostr
-        #@param sReplyEchoStr: 解密之后的echostr，当return返回0时有效
-        #@return：成功0，失败返回对应的错误码
+        # @param sMsgSignature: 签名串，对应URL参数的msg_signature
+        # @param sTimeStamp: 时间戳，对应URL参数的timestamp
+        # @param sNonce: 随机串，对应URL参数的nonce
+        # @param sEchoStr: 随机串，对应URL参数的echostr
+        # @param sReplyEchoStr: 解密之后的echostr，当return返回0时有效
+        # @return：成功0，失败返回对应的错误码
+
     def VerifyURL(self, sMsgSignature, sTimeStamp, sNonce, sEchoStr):
         sha1 = SHA1()
         ret, signature = sha1.getSHA1(
@@ -242,9 +243,9 @@ class WXBizMsgCrypt(object):
 
     def EncryptMsg(self, sReplyMsg, sNonce, timestamp=None):
         # 将公众号回复用户的消息加密打包
-        #@param sReplyMsg: 企业号待回复用户的消息，xml格式的字符串
-        #@param sTimeStamp: 时间戳，可以自己生成，也可以用URL参数的timestamp,如为None则自动用当前时间
-        #@param sNonce: 随机串，可以自己生成，也可以用URL参数的nonce
+        # @param sReplyMsg: 企业号待回复用户的消息，xml格式的字符串
+        # @param sTimeStamp: 时间戳，可以自己生成，也可以用URL参数的timestamp,如为None则自动用当前时间
+        # @param sNonce: 随机串，可以自己生成，也可以用URL参数的nonce
         # sEncryptMsg: 加密后的可以直接回复用户的密文，包括msg_signature, timestamp, nonce, encrypt的xml格式的字符串,
         # return：成功0，sEncryptMsg,失败返回对应的错误码None
         pc = Prpcrypt(self.key)
@@ -270,7 +271,7 @@ class WXBizMsgCrypt(object):
         # @param sPostData: 密文，对应POST请求的数据
         #  xml_content: 解密后的原文，当return返回0时有效
         # @return: 成功0，失败返回对应的错误码
-         # 验证安全签名
+        # 验证安全签名
         xmlParse = XMLParse()
         ret, encrypt, touser_name = xmlParse.extract(sPostData)
         if ret != 0:

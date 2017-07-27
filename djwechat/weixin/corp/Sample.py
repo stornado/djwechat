@@ -6,9 +6,11 @@
 # File Name: Sample.py
 # Description: WXBizMsgCrypt 使用demo文件
 #########################################################################
+import sys
 import xml.etree.cElementTree as ET
 
-from WXBizMsgCrypt import WXBizMsgCrypt
+from .WXBizMsgCrypt import WXBizMsgCrypt
+
 if __name__ == "__main__":
     # 假设企业在公众平台上设置的参数如下
     sToken = "QDG6eK"
@@ -38,8 +40,8 @@ if __name__ == "__main__":
     sVerifyEchoStr = "P9nAzCzyDtyTWESHep1vC5X9xho/qYX3Zpb4yKa9SKld1DsH3Iyt3tP3zNdtp+4RPcs8TgAE7OaBO+FZXvnaqQ=="
     ret, sEchoStr = wxcpt.VerifyURL(
         sVerifyMsgSig, sVerifyTimeStamp, sVerifyNonce, sVerifyEchoStr)
-    if(ret != 0):
-        print "ERR: VerifyURL ret: " + ret
+    if (ret != 0):
+        print("ERR: VerifyURL ret: " + ret)
         sys.exit(1)
     # 验证URL成功，将sEchoStr返回给企业号
     # HttpUtils.SetResponse(sEchoStr)
@@ -66,15 +68,15 @@ if __name__ == "__main__":
     sReqData = "<xml><ToUserName><![CDATA[wx5823bf96d3bd56c7]]></ToUserName><Encrypt><![CDATA[RypEvHKD8QQKFhvQ6QleEB4J58tiPdvo+rtK1I9qca6aM/wvqnLSV5zEPeusUiX5L5X/0lWfrf0QADHHhGd3QczcdCUpj911L3vg3W/sYYvuJTs3TUUkSUXxaccAS0qhxchrRYt66wiSpGLYL42aM6A8dTT+6k4aSknmPj48kzJs8qLjvd4Xgpue06DOdnLxAUHzM6+kDZ+HMZfJYuR+LtwGc2hgf5gsijff0ekUNXZiqATP7PF5mZxZ3Izoun1s4zG4LUMnvw2r+KqCKIw+3IQH03v+BCA9nMELNqbSf6tiWSrXJB3LAVGUcallcrw8V2t9EL4EhzJWrQUax5wLVMNS0+rUPA3k22Ncx4XXZS9o0MBH27Bo6BpNelZpS+/uh9KsNlY6bHCmJU9p8g7m3fVKn28H3KDYA5Pl/T8Z1ptDAVe0lXdQ2YoyyH2uyPIGHBZZIs2pDBS8R07+qN+E7Q==]]></Encrypt><AgentID><![CDATA[218]]></AgentID></xml>"
     ret, sMsg = wxcpt.DecryptMsg(
         sReqData, sReqMsgSig, sReqTimeStamp, sReqNonce)
-    if(ret != 0):
-        print "ERR: DecryptMsg ret: " + ret
+    if (ret != 0):
+        print("ERR: DecryptMsg ret: " + ret)
         sys.exit(1)
     # 解密成功，sMsg即为xml格式的明文
     # TODO: 对明文的处理
     # For example:
     xml_tree = ET.fromstring(sMsg)
     content = xml_tree.find("Content").text
-    print content
+    print(content)
     # ...
     # ...
 
@@ -98,9 +100,9 @@ if __name__ == "__main__":
    '''
     sRespData = "<xml><ToUserName><![CDATA[mycreate]]></ToUserName><FromUserName><![CDATA[wx5823bf96d3bd56c7]]></FromUserName><CreateTime>1348831860</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[this is a test]]></Content><MsgId>1234567890123456</MsgId><AgentID>128</AgentID></xml>"
     ret, sEncryptMsg = wxcpt.EncryptMsg(sRespData, sReqNonce, sReqTimeStamp)
-    if(ret != 0):
-        print "ERR: EncryptMsg ret: " + ret
+    if (ret != 0):
+        print("ERR: EncryptMsg ret: " + ret)
         sys.exit(1)
-    # ret == 0 加密成功，企业需要将sEncryptMsg返回给企业号
-    # TODO:
-    # HttpUitls.SetResponse(sEncryptMsg)
+        # ret == 0 加密成功，企业需要将sEncryptMsg返回给企业号
+        # TODO:
+        # HttpUitls.SetResponse(sEncryptMsg)
