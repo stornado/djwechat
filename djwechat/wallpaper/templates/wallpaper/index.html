@@ -225,7 +225,7 @@
             template += "<p class=\"text-right text-muted text-nowrap nowrap-hidden\"><small>" + data.pubDate + "</small></p>\n";
             template += "</div>\n";
             template += "</div>\n";
-            template += "<p class=\"text-justify text-muted\">" + data.tags + "</p>\n";
+            template += "<p class=\"text-justify text-muted\">" + {% if data.tags %}data.tags{% else %}data.name{% endif %} + "</p>\n";
             template += "</div>\n";
             template += "</div>\n";
             template += "</div>\n";
