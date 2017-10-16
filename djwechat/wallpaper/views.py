@@ -6,12 +6,13 @@ import requests
 from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
 from django.core.paginator import Paginator
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.shortcuts import get_list_or_404
 from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Image
+
 
 # Create your views here.
 
@@ -40,7 +41,8 @@ def next(request):
     except PageNotAnInteger:
         images = paginator.page(1)
     except EmptyPage:
-        images = paginator.page(paginator.num_pages)
+        # images = paginator.page(paginator.num_pages)
+        raise Http404(_("The result is empty"))
     finally:
         return render(request, 'wallpaper/next_page.json',
                       {'images': images},
@@ -58,7 +60,7 @@ def validate(request):
         all_images = get_list_or_404(Image)
     else:
         all_images = get_list_or_404(Image, show=True)
-        
+
     update_counts = 0
     for image in all_images:
         url = image.url
