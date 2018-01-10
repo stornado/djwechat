@@ -214,7 +214,7 @@
             template += "<div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2\">\n";
             template += "<div class=\"thumbnail\" id=\"" + data.oid + "\">\n";
             template += "<a href=\"" + data.url + "\" rel=\"nofollow\">\n";
-            template += "<img src=\"" + data.url.replace('1080,1920', '320,480') + "\" alt=\"" + data.name + "\" class=\"img-responsive\">\n";
+            template += "<img src=\"" + data.url.replace(/(\d+),(\d+),(\d+)\.(\w+)/, '$1,320,480.webp') + "\" alt=\"" + data.name + "\" class=\"img-responsive\">\n";
             template += "</a>\n";
             template += "<div class=\"caption\">\n";
             template += "<div class=\"row\">\n";
