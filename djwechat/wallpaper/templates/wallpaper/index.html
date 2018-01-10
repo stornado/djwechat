@@ -329,7 +329,7 @@
             },
             complete: function() {
                 $("img").error(function() {
-                    $(this).hide();
+                    $(this).attr('src', "{% static 'wallpaper/placeholder320x480.png' %}");
                 });
             }
         });
