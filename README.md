@@ -9,4 +9,4 @@ cd djwechat/djwechat
 ./managy.py migrate
 ./managy.py collectstatic
 ./managy.py runserver --insecure # 带上--insecure解决static目录404问题
-···
+```
